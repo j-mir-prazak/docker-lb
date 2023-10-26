@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  nodesingle:
+    hostname: node
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - "1900"
+    ports:
+      - "1901:1900"
+    deploy:
+        mode: replicated
+        replicas: 1
+
